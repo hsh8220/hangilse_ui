@@ -1,5 +1,5 @@
 var gulp = require("gulp"),
-    uglify = require("gulp-uglify"),
+    uglify = require("gulp-terser"),
     babel = require('gulp-babel'),
     rename = require("gulp-rename"),
     sourcemaps = require("gulp-sourcemaps"),
