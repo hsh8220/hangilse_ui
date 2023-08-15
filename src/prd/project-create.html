@@ -1,0 +1,214 @@
+@@include('./partials/main.html')
+
+    <head>
+        @@include("partials/title-meta.html", {"title": "Create Project"})
+
+        <!-- Plugins css -->
+        <link href="assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/mohithg-switchery/switchery.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css" />
+        <!-- quill css -->
+        <link href="assets/libs/quill/quill.core.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/quill/quill.snow.css" rel="stylesheet" type="text/css" />
+
+        @@include('./partials/head-css.html')
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/menu.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+
+                @@include('./partials/topbar.html')
+
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        
+                        @@include("./partials/page-title.html", {"subtitle":"Projects","title":"Create Project"})
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <div class="row">
+                                            <div class="col-xl-9">
+                                                <div class="mb-3">
+                                                    <label for="project-name" class="form-label">Project Name</label>
+                                                    <input type="text" id="project-name" class="form-control" placeholder="Enter project name">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="project-type" class="form-label">Project Type</label>
+                                                    <select id="project-type" placeholder="Select Project type"></select>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="client" class="form-label">Client</label>
+                                                    <select id="client" placeholder="Select Client"></select>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="mb-3">
+                                                            <label for="assignee" class="form-label">Assignee</label>
+                                                            <select id="assignee" placeholder="Select Assignee"></select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="mb-3">
+                                                            <label for="watchers" class="form-label">Watchers</label>
+                                                            <select id="watchers" multiple placeholder="Select Watchers"></select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="project-overview" class="form-label">Project Overview</label>
+                                                    <div id="project-overview" style="height: 500px;"></div>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label">Target Date</label>
+                                                    <input type="text" id="target-date" class="form-control" data-toggle="flatpicker">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="tags" class="form-label">Tags</label>
+                                                    <input type="text" id="tags" class="selectize-close-btn">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="cost" class="form-label">Cost</label>
+                                                    <input type="text" id="cost" class="form-control" placeholder="Enter project cost">
+                                                </div>
+
+                                            </div> <!-- end col-->
+
+<!--                                            <div class="col-xl-3">-->
+<!--                                                <div class="my-3 mt-xl-0">-->
+<!--                                                    <label for="project-name" class="mb-0 form-label">File Upload</label>-->
+<!--                                                    <p class="text-muted font-14"></p>-->
+
+<!--                                                    <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"-->
+<!--                                                        data-upload-preview-template="#uploadPreviewTemplate">-->
+<!--                                                        <div class="fallback">-->
+<!--                                                            <input name="file" type="file" />-->
+<!--                                                        </div>-->
+
+<!--                                                        <div class="dz-message needsclick">-->
+<!--                                                            <i class="h3 text-muted dripicons-cloud-upload"></i>-->
+<!--                                                            <h4>Drop files here or click to upload.</h4>-->
+<!--                                                        </div>-->
+<!--                                                    </form>-->
+
+<!--                                                    &lt;!&ndash; Preview &ndash;&gt;-->
+<!--                                                    <div class="dropzone-previews mt-3" id="file-previews"></div>-->
+
+<!--                                                    &lt;!&ndash; file preview template &ndash;&gt;-->
+<!--                                                    <div class="d-none" id="uploadPreviewTemplate">-->
+<!--                                                        <div class="card mt-1 mb-0 shadow-none border">-->
+<!--                                                            <div class="p-2">-->
+<!--                                                                <div class="row align-items-center">-->
+<!--                                                                    <div class="col-auto">-->
+<!--                                                                        <img data-dz-thumbnail src="#" class="avatar-sm rounded bg-light" alt="">-->
+<!--                                                                    </div>-->
+<!--                                                                    <div class="col ps-0">-->
+<!--                                                                        <a href="javascript:void(0);" class="text-muted fw-bold" data-dz-name></a>-->
+<!--                                                                        <p class="mb-0" data-dz-size></p>-->
+<!--                                                                    </div>-->
+<!--                                                                    <div class="col-auto">-->
+<!--                                                                        &lt;!&ndash; Button &ndash;&gt;-->
+<!--                                                                        <a href="" class="btn btn-link btn-lg text-muted" data-dz-remove>-->
+<!--                                                                            <i class="mdi mdi-close"></i>-->
+<!--                                                                        </a>-->
+<!--                                                                    </div>-->
+<!--                                                                </div>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                    &lt;!&ndash; end file preview template &ndash;&gt;-->
+<!--                                                </div>-->
+<!--                                            </div> &lt;!&ndash; end col&ndash;&gt;-->
+                                        </div>
+                                        <!-- end row -->
+
+
+                                        <div class="row mt-3">
+                                            <div class="col-12 text-center">
+                                                <button type="button" id="create" class="btn btn-success waves-effect waves-light m-1"><i class="fe-check-circle me-1"></i> Create</button>
+<!--                                                <button type="button" class="btn btn-light waves-effect waves-light m-1"><i class="fe-x me-1"></i> Cancel</button>-->
+                                            </div>
+                                        </div>
+
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+                        </div>
+                        <!-- end row-->
+                        
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+        
+        @@include('./partials/footer-scripts.html')
+
+        <!-- plugin js -->
+        <script src="assets/libs/dropzone/min/dropzone.min.js"></script>
+        <script src="assets/libs/select2/js/select2.min.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+
+        <script src="assets/libs/selectize/js/standalone/selectize.min.js"></script>
+        <script src="assets/libs/mohithg-switchery/switchery.min.js"></script>
+        <script src="assets/libs/multiselect/js/jquery.multi-select.js"></script>
+        <script src="assets/libs/select2/js/select2.min.js"></script>
+        <script src="assets/libs/jquery-mockjax/jquery.mockjax.min.js"></script>
+        <script src="assets/libs/devbridge-autocomplete/jquery.autocomplete.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+        <script src="assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/create-project.init.js"></script>
+
+        <!-- Quill js -->
+        <script src="assets/libs/quill/quill.min.js"></script>
+
+        <script>
+            // Snow theme
+            var quill = new Quill('#project-overview', {
+                theme: 'snow',
+                modules: {
+                    'toolbar': [[{ 'size': [] }], ['bold', 'italic', 'underline', 'strike'], [{ 'color': [] }, { 'background': [] }], [{ 'header': [false, 1, 2, 3, 4, 5, 6] }, 'blockquote', 'code-block'], [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }], ['direction', { 'align': [] }]]
+                },
+            });
+        </script>
+    </body>
+</html>

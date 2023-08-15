@@ -373,4 +373,10 @@
 
 })(jQuery)
 
+function getSystemVar(selector) {
+    var variable = {
+        "host" : "http://localhost:8080"
+    }
 
+    return variable[selector]
+}

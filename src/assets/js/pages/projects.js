@@ -11,7 +11,7 @@ $(document).ready(function () {
         window.location.href = 'project-create.html';
     });
 
-    var table = $('#tickets-table').DataTable({
+    var table = $('#project-table').DataTable({
         "columns" : [
             {data: 'id'},
             {data: 'name'},
@@ -31,7 +31,7 @@ $(document).ready(function () {
         "drawCallback": function () {
             $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
 
-            $('#tickets-table tbody').on('click', 'tr', function() {
+            $('#project-table tbody').on('click', 'tr', function() {
                 var data = table.row(this).data();
                 if (data) {
                     // 행의 id 값을 가져와서 URL에 파라미터로 추가하여 페이지 이동

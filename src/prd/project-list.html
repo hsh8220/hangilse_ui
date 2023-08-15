@@ -1,0 +1,224 @@
+@@include('./partials/main.html')
+
+    <head>
+        @@include("partials/title-meta.html", {"title": "Project List"})
+
+        <!-- third party css -->
+        <link href="assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <!-- third party css end -->
+
+		@@include('./partials/head-css.html')
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/menu.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+
+                @@include('./partials/topbar.html')
+
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        @@include("./partials/page-title.html", {"subtitle":"Projects","title":"Project List"})
+
+                        <div class="row">
+                            <div class="col-md-6 col-xl-2">
+                                <div class="widget-rounded-circle card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="avatar-lg rounded-circle bg-blue">
+                                                    <i class="fe-list font-22 avatar-title text-white"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="text-end">
+                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup" id="total">0</span></h3>
+                                                    <p class="text-muted mb-1 text-truncate">TOTAL</p>
+                                                </div>
+                                            </div>
+                                        </div> <!-- end row-->
+                                    </div>
+                                </div> <!-- end widget-rounded-circle-->
+                            </div> <!-- end col-->
+
+                            <div class="col-md-6 col-xl-2">
+                                <div class="widget-rounded-circle card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="avatar-lg rounded-circle bg-pink">
+                                                    <i class="icon-notebook font-22 avatar-title text-white"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="text-end">
+                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup" id="todo">0</span></h3>
+                                                    <p class="text-muted mb-1 text-truncate">TODO</p>
+                                                </div>
+                                            </div>
+                                        </div> <!-- end row-->
+                                    </div>
+                                </div> <!-- end widget-rounded-circle-->
+                            </div> <!-- end col-->
+
+                            <div class="col-md-6 col-xl-2">
+                                <div class="widget-rounded-circle card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="avatar-lg rounded-circle bg-warning">
+                                                    <i class="fe-clock font-22 avatar-title text-white"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="text-end">
+                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup" id="working">0</span></h3>
+                                                    <p class="text-muted mb-1 text-truncate">WORKING</p>
+                                                </div>
+                                            </div>
+                                        </div> <!-- end row-->
+                                    </div>
+                                </div> <!-- end widget-rounded-circle-->
+                            </div> <!-- end col-->
+
+                            <div class="col-md-6 col-xl-2">
+                                <div class="widget-rounded-circle card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="avatar-lg rounded-circle bg-secondary">
+                                                    <i class="fe-thumbs-up font-22 avatar-title text-white"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="text-end">
+                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup" id="review">0</span></h3>
+                                                    <p class="text-muted mb-1 text-truncate">REVIEW</p>
+                                                </div>
+                                            </div>
+                                        </div> <!-- end row-->
+                                    </div>
+                                </div> <!-- end widget-rounded-circle-->
+                            </div> <!-- end col-->
+
+                            <div class="col-md-6 col-xl-2">
+                                <div class="widget-rounded-circle card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="avatar-lg rounded-circle bg-danger">
+                                                    <i class="fe-dollar-sign font-22 avatar-title text-white"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="text-end">
+                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup" id="accounting">0</span></h3>
+                                                    <p class="text-muted mb-1 text-truncate">ACCOUNTING</p>
+                                                </div>
+                                            </div>
+                                        </div> <!-- end row-->
+                                    </div>
+                                </div> <!-- end widget-rounded-circle-->
+                            </div> <!-- end col-->
+
+                            <div class="col-md-6 col-xl-2">
+                                <div class="widget-rounded-circle card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="avatar-lg rounded-circle bg-success">
+                                                    <i class="fe-check-square font-22 avatar-title text-white"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="text-end">
+                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup" id="done"></span>0</h3>
+                                                    <p class="text-muted mb-1 text-truncate">DONE</p>
+                                                </div>
+                                            </div>
+                                        </div> <!-- end row-->
+                                    </div>
+                                </div> <!-- end widget-rounded-circle-->
+                            </div> <!-- end col-->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <button id="addProject" type="button" class="btn btn-sm btn-blue waves-effect waves-light float-end">
+                                            <i class="mdi mdi-plus-circle"></i> Add Project
+                                        </button>
+                                        <h4 class="header-title mb-4">Project List</h4>
+    
+                                        <div class="table-responsive">
+                                            <table class="table table-hover m-0 table-centered dt-responsive nowrap w-100" id="project-table">
+                                                <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Project Name</th>
+                                                    <th>Assignee</th>
+                                                    <th>Project Type</th>
+                                                    <th>Client</th>
+                                                    <th>Status</th>
+                                                    <th>Created Date</th>
+                                                    <th>Due Date</th>
+                                                </tr>
+                                                </thead>
+        
+                                                <tbody></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+                        
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+        
+        @@include('./partials/footer-scripts.html')
+
+        <!-- third party js -->
+        <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+        <script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+        <!-- third party js ends -->
+
+        <!-- Projects js -->
+        <script src="assets/js/pages/projects.js"></script>
+
+        
+    </body>
+</html>
